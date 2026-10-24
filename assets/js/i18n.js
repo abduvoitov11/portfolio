@@ -21,13 +21,13 @@ const translations = {
     services_title: "Nimalar qila olaman",
     service_ai_title: "AI & Machine Learning",
     service_ai_desc: "Neyron tarmoqlar, LLM agentlar va sun'iy intellekt modellarini PyTorch va TensorFlow'da noldan yig'ish va deploy qilish.",
-    service_web_title: "Full-Stack Web",
-    service_web_desc: "React, Next.js va FastAPI'da tezkor, xavfsiz va chiroyli interfeysli zamonaviy veb-ilovalarni yaratish.",
+    service_web_title: "Veb & API Tizimlari",
+    service_web_desc: "React, Next.js va FastAPI'da tezkor, xavfsiz va chiroyli interfeysli zamonaviy tizimlarni yaratish.",
     service_sec_title: "Linux & Xavfsizlik",
     service_sec_desc: "Linux serverlarni sozlash, Docker containerlar, xavfsizlik auditi (pentesting) va avtomatlashtirish.",
 
     about_widget_title: "Men haqimda",
-    about_widget_p1: "Salom! Men Torabek Abduvoitov — AI Developer va Full-Stack dasturchiman. Toshkentdanman. Sun'iy intellekt, LLM modellar va zamonaviy web tizimlar yaratish jon-u dilim.",
+    about_widget_p1: "Salom! Men Torabek Abduvoitov — AI dasturchiman. Toshkentdanman. Sun'iy intellekt, LLM modellar va tezkor backend tizimlar yaratish jon-u dilim.",
     about_widget_p2: "Har bir proyektga arxitektura va xavfsizlik tomonidan jiddiy qarayman. Maqsadim — AI va dasturlash kuchini birlashtirib, odamlarga real foyda keltiradigan zo'r mahsulotlar yaratish.",
 
     // App Names & Tooltips
@@ -54,17 +54,15 @@ const translations = {
 
     // About Page Modal
     about_page_title: "Men haqimda",
-    about_intro_p1: "Qalay! Men <strong>Torabek Abduvoitovman</strong> — Toshkentlik AI & Full-Stack dasturchi. Yangi texnologiyalar, sun'iy intellekt va foydalanuvchiga qulay interfeyslarni birlashtirishni yoqtiraman.",
-    about_intro_p2: "Python'da LLM va kompyuter ko'rishi (CV) modellarini o'rgatishdan tortib, FastAPI, React va Next.js'da chaqqon veb-ilovalargacha tayyorlayman. Proyektlarimda ham funksionallik, ham tezlik va xavfsizlikka alohida e'tibor beraman.",
+    about_intro_p1: "Qalay! Men <strong>Torabek Abduvoitovman</strong> — Toshkentlik AI dasturchi. Yangi texnologiyalar, sun'iy intellekt va murakkab masalalarga aqlli yechimlar yaratish jon-u dilim.",
+    about_intro_p2: "Python'da LLM va kompyuter ko'rishi (CV) modellarini o'rgatishdan tortib, FastAPI va Docker'da chaqqon, xavfsiz tizimlargacha tayyorlayman. Proyektlarimda ham funksionallik, ham tezlik va xavfsizlikka alohida e'tibor beraman.",
     about_competencies_title: "Asosiy yo'nalishlarim:",
-    about_comp_1: "Sun'iy intellekt va Deep Learning (PyTorch, TensorFlow)",
-    about_comp_2: "Katta til modellari (LLMs), AI agentlar va RAG tizimlari",
-    about_comp_3: "Yuqori tezlikdagi backend (FastAPI, Python, Django)",
-    about_comp_4: "Zamonaviy frontend (React, Next.js, TypeScript, Tailwind)",
-    about_comp_5: "Ma'lumotlar bazasi (PostgreSQL, MongoDB, MySQL, Redis)",
+    about_comp_1: "Katta til modellari (LLMs), AI agentlar va RAG tizimlari",
+    about_comp_2: "Yuqori tezlikdagi backend (FastAPI, Python, Django)",
+    about_comp_3: "Zamonaviy frontend (React, Next.js, TypeScript, Tailwind)",
+    about_comp_4: "Ma'lumotlar bazasi (PostgreSQL, MongoDB, MySQL, Redis)",
+    about_comp_5: "Algoritmlar va sport dasturlash (C++)",
     about_comp_6: "Linux tizimlarini boshqarish va Docker devops",
-    about_comp_7: "Algoritmlar va sport dasturlash (C++)",
-    about_comp_8: "Veb xavfsizlik va oq xakerlik (Pentest, OWASP)",
     about_outro_1: "Kodni toza yozish, tizimni qulay va xavfsiz qilish — birinchi o'rinda. Bo'sh vaqtlarda esa Informatika olimpiadalarida qatnashaman va kiberxavfsizlik bo'yicha tadqiqotlar qilaman.",
     about_stack_title: "Asosiy Texnologiyalar",
 
@@ -72,7 +70,7 @@ const translations = {
     projects_page_title: "Proyektlar",
     badge_featured: "Alohida",
     badge_production: "Prodakshn",
-    badge_fullstack: "Full-Stack",
+    badge_backend: "AI & Backend",
     badge_web: "Veb",
     badge_security: "Xavfsizlik",
 
@@ -98,13 +96,12 @@ const translations = {
 
     // Experience Page Modal
     exp_page_title: "Tajriba",
-    exp1_role: "AI & Full-Stack Dasturchi",
+    exp1_role: "AI Dasturchi",
     exp1_place: "Frilans / Mustaqil loyihalar • Toshkent, O'zbekiston",
     exp1_date: "2023 - Hozirgacha",
     exp1_intro: "Mijozlar va turli loyihalar uchun aqlli tizimlar hamda sun'iy intellekt integratsiyalarini ishlab chiqish:",
     exp1_p1: "Python, PyTorch va Hugging Face yordamida neyron tarmoqlar va LLM agent tizimlarini yaratish.",
     exp1_p2: "FastAPI, PostgreSQL va Docker asosida tezkor, asinxron REST API'lar yozish.",
-    exp1_p3: "React va Next.js'da yuqori samaradorlikka ega dinamik veb-interfeyslar tayyorlash.",
 
     exp2_role: "Dasturchi va Avtomatlashtirish Muhandisi",
     exp2_place: "Turli texnologik loyihalar • Toshkent, O'zbekiston",
@@ -115,7 +112,7 @@ const translations = {
     exp2_p3: "Linux VPS serverlarni sozlash, xavfsizlik va monitoring jarayonlarini boshqarish.",
 
     exp3_role: "Sport Dasturlash & Xavfsizlik Auditi",
-    exp3_place: "Informatika olimpiadasi qatnashchisi & Oq xakerlik",
+    exp3_place: "Informatika fani bo'yicha Asosiy fan olimpiadasi • Algoritmik dasturlash bo'yicha tuman ishtirokchisi va finalchi",
     exp3_date: "2021 - Hozirgacha",
     exp3_intro: "Algoritmik musobaqalar va veb-xavfsizlik tadqiqotlari bilan shug'ullanish:",
     exp3_p1: "O'zbekiston Asosiy fan olimpiadalarida C++ va Python tillarida faol ishtirok etish.",
@@ -137,11 +134,9 @@ const translations = {
     resume_page_title: "Rezyume",
     resume_contact_btn: "Email orqali bog'lanish",
     resume_summary_title: "Qisqacha Ma'lumot",
-    resume_summary_text: "Sun'iy intellekt, chuqur o'rganish (LLM) tizimlari va zamonaviy veb-platformalar yaratishga qiziquvchi AI Developer va Full-Stack muhandis. Algoritmik fikrlash (Informatika olimpiadalari), Linux tizimlari va xavfsiz arxitekturada mustahkam tajribaga ega.",
+    resume_summary_text: "Sun'iy intellekt, chuqur o'rganish (LLM) tizimlari va yuqori samarali backend platformalar yaratishga qiziquvchi AI Developer. Algoritmik fikrlash (Informatika olimpiadalari), Linux tizimlari va xavfsiz arxitekturada mustahkam tajribaga ega.",
     resume_exp_title: "Ish Tajribasi",
     resume_edu_title: "Ta'lim va Yutuqlar",
-    resume_edu_1: "Kompyuter Ilmlari va Dasturiy Ta'minot",
-    resume_edu_1_sub: "Ilg'or informatika va algoritmik dasturlash",
     resume_edu_2: "Informatika fani bo'yicha Asosiy fan olimpiadasi",
     resume_edu_2_sub: "Algoritmik dasturlash bo'yicha tuman ishtirokchisi va finalchi",
     resume_skills_title: "Texnik Ko'nikmalar",
@@ -181,14 +176,14 @@ const translations = {
     services_title: "What I'm doing",
     service_ai_title: "AI & Machine Learning",
     service_ai_desc: "Building neural networks, LLM agents, and computer vision models in PyTorch & TensorFlow.",
-    service_web_title: "Full-Stack Web",
-    service_web_desc: "Modern web applications with React, Next.js, FastAPI, TypeScript and responsive UI.",
+    service_web_title: "Web & API Systems",
+    service_web_desc: "Modern web applications and APIs with React, Next.js, FastAPI, TypeScript and secure architecture.",
     service_sec_title: "Linux & Security",
     service_sec_desc: "Linux administration, Docker containerization, security hardening and automation.",
 
     about_widget_title: "About me",
-    about_widget_p1: "Hi, I’m Torabek Abduvoitov, an AI & Full-Stack Developer from Tashkent, Uzbekistan. I specialize in Artificial Intelligence, Deep Learning (LLMs), and scalable web applications.",
-    about_widget_p2: "I bring engineering rigor to every project, ensuring robust architecture while delivering an intuitive user experience. My aim is to combine artificial intelligence and software engineering to transform ideas into impactful, scalable solutions.",
+    about_widget_p1: "Hi, I’m Torabek Abduvoitov, an AI Developer from Tashkent, Uzbekistan. I specialize in Artificial Intelligence, Deep Learning (LLMs), and scalable backend architectures.",
+    about_widget_p2: "I bring engineering rigor to every project, ensuring robust architecture while delivering high reliability. My aim is to combine artificial intelligence and software engineering to transform ideas into impactful, scalable solutions.",
 
     // App Names & Tooltips
     app_mail: "Mail",
@@ -214,25 +209,23 @@ const translations = {
 
     // About Page Modal
     about_page_title: "About Me",
-    about_intro_p1: "Hi, I'm <strong>Torabek Abduvoitov</strong>, an ambitious AI & Full-Stack Developer based in Tashkent, Uzbekistan. I specialize in building intelligent systems, Machine Learning models, and modern, high-performance web applications.",
-    about_intro_p2: "My passion lies at the intersection of Artificial Intelligence, robust backend architectures, and delightful user interfaces. From engineering fine-tuned LLM workflows and Computer Vision pipelines in Python to crafting responsive full-stack applications with FastAPI, React, and Next.js, I build software that creates real impact.",
+    about_intro_p1: "Hi, I'm <strong>Torabek Abduvoitov</strong>, an ambitious AI Developer based in Tashkent, Uzbekistan. I specialize in building intelligent systems, Deep Learning models, and modern software architectures.",
+    about_intro_p2: "My passion lies in Artificial Intelligence, robust backend architectures, and efficient software systems. From engineering fine-tuned LLM workflows and Computer Vision pipelines in Python to building secure APIs with FastAPI and Docker, I create software that delivers real impact.",
     about_competencies_title: "My core competencies:",
-    about_comp_1: "Artificial Intelligence & Deep Learning (PyTorch, TensorFlow)",
-    about_comp_2: "LLMs, AI Agents & RAG Architecture",
-    about_comp_3: "High-Performance Backend (FastAPI, Python, Django)",
-    about_comp_4: "Modern Frontend (React, Next.js, TypeScript, Tailwind)",
-    about_comp_5: "Database Design (PostgreSQL, MongoDB, MySQL, Redis)",
+    about_comp_1: "LLMs, AI Agents & RAG Architecture",
+    about_comp_2: "High-Performance Backend (FastAPI, Python, Django)",
+    about_comp_3: "Modern Frontend (React, Next.js, TypeScript, Tailwind)",
+    about_comp_4: "Database Systems (PostgreSQL, MongoDB, MySQL, Redis)",
+    about_comp_5: "Competitive Programming (Algorithms & Data Structures in C++)",
     about_comp_6: "Linux System Administration & Docker DevOps",
-    about_comp_7: "Competitive Programming (Algorithms & Data Structures in C++)",
-    about_comp_8: "Application Security & Web Penetration Testing",
-    about_outro_1: "I place immense emphasis on clean code, modular architecture, and high security. When I'm not developing AI platforms or full-stack software, I compete in Informatics Olympiads and research cybersecurity vulnerabilities.",
+    about_outro_1: "I place immense emphasis on clean code, modular architecture, and high security. When I'm not developing AI platforms, I compete in Informatics Olympiads and research cybersecurity vulnerabilities.",
     about_stack_title: "Core Tech Stack",
 
     // Projects Page Modal
     projects_page_title: "Projects",
     badge_featured: "Featured",
     badge_production: "Production",
-    badge_fullstack: "Full-Stack",
+    badge_backend: "AI & Backend",
     badge_web: "Web",
     badge_security: "Security",
 
@@ -258,13 +251,12 @@ const translations = {
 
     // Experience Page Modal
     exp_page_title: "Experience",
-    exp1_role: "AI & Full-Stack Developer",
+    exp1_role: "AI Developer",
     exp1_place: "Independent / Freelance • Tashkent, Uzbekistan",
     exp1_date: "2023 - Present",
     exp1_intro: "Leading the development of intelligent web systems and machine learning integrations for enterprise clients:",
     exp1_p1: "Designed neural network architectures and LLM agent pipelines using Python, PyTorch, and Hugging Face.",
     exp1_p2: "Built scalable, async REST APIs using FastAPI, PostgreSQL, and Docker containerization.",
-    exp1_p3: "Created dynamic, reactive user dashboards in React and Next.js with high performance metrics.",
 
     exp2_role: "Software Engineer & Automation Specialist",
     exp2_place: "Various Tech Projects • Tashkent, Uzbekistan",
@@ -275,7 +267,7 @@ const translations = {
     exp2_p3: "Managed Linux production VPS environments, security policies, and system monitoring.",
 
     exp3_role: "Competitive Programming & Security Auditing",
-    exp3_place: "Informatics Olympiad Competitor & White-Hat Researcher",
+    exp3_place: "National Informatics Olympiad (Asosiy fan olimpiadasi) • District Participant & Finalist",
     exp3_date: "2021 - Present",
     exp3_intro: "Participating in algorithmic programming competitions and web security research:",
     exp3_p1: "Competed in Uzbekistan's National Informatics Olympiad (Asosiy fan olimpiadasi) with C++ and Python.",
@@ -287,7 +279,7 @@ const translations = {
     skills_core_title: "Core Expertise",
     skill_ai: "Artificial Intelligence & ML (PyTorch, LLMs)",
     skill_backend: "Python & Backend Engineering (FastAPI, Django)",
-    skill_frontend: "Full-Stack Web (React, Next.js, TypeScript)",
+    skill_frontend: "Modern Web (React, Next.js, TypeScript)",
     skill_linux: "Linux, Bash & Docker DevOps",
     skill_db: "Database Systems (PostgreSQL, MongoDB, Redis)",
     skill_algo: "Competitive Programming & Algorithms (C++)",
@@ -297,13 +289,11 @@ const translations = {
     resume_page_title: "Resume",
     resume_contact_btn: "Contact via Email",
     resume_summary_title: "Professional Summary",
-    resume_summary_text: "Passionate AI Developer and Full-Stack Software Engineer with expertise in building deep learning systems, LLM agent architectures, and responsive web platforms. Strong background in algorithmic problem solving (Informatics Olympiads), Linux system administration, and modern software design patterns.",
+    resume_summary_text: "Passionate AI Developer and Software Engineer with expertise in building deep learning systems, LLM agent architectures, and high-performance backend platforms. Strong background in algorithmic problem solving (Informatics Olympiads), Linux system administration, and modern software design patterns.",
     resume_exp_title: "Work Experience",
     resume_edu_title: "Education & Honors",
-    resume_edu_1: "Computer Science & Software Engineering",
-    resume_edu_1_sub: "Advanced Informatics & Algorithmic Programming",
     resume_edu_2: "National Informatics Olympiad (Asosiy Fan Olimpiadasi)",
-    resume_edu_2_sub: "Competitive Programming Finalist & District Participant",
+    resume_edu_2_sub: "Algorithmic Programming District Participant & Finalist",
     resume_skills_title: "Technical Skills",
 
     // Contact Page Modal
@@ -315,7 +305,7 @@ const translations = {
     contact_label_location: "Location",
     contact_location_val: "Tashkent, Uzbekistan",
     contact_connect_title: "Let's Connect",
-    contact_connect_desc: "Whether you have an inquiry about AI solutions, full-stack web applications, business collaborations, or just want to say hi, feel free to drop me a message on Telegram or email!",
+    contact_connect_desc: "Whether you have an inquiry about AI solutions, backend architectures, business collaborations, or just want to say hi, feel free to drop me a message on Telegram or email!",
     contact_btn_tg: "Message on Telegram ↗",
     contact_btn_mail: "Send an Email ↗"
   }
