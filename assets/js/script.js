@@ -392,7 +392,7 @@ window.openApp = function (name, url) {
   // Create new window
   const winEl = document.createElement('div');
   winEl.className = 'mac-window';
-  if (url.includes('retrogames') || url.includes('gettingoverit') || url.includes('freeriderhd')) winEl.classList.add('solid-mode');
+  if (url.includes('retrogames') || url.includes('gettingoverit') ) winEl.classList.add('solid-mode');
 
   winEl.innerHTML = `
         <div class="window-titlebar">
