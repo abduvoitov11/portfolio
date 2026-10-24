@@ -880,6 +880,19 @@
       margin-bottom: 80px;
     }
 
+    .ls-ampm {
+      display: inline-block;
+      font-size: 0.28em;
+      font-weight: 600;
+      font-family: 'Inter', -apple-system, sans-serif;
+      margin-left: 10px;
+      letter-spacing: 1px;
+      opacity: 0.85;
+      vertical-align: top;
+      transform: scaleY(0.74);
+      transform-origin: top left;
+    }
+
     /* ---- User Accounts ---- */
     .ls-users {
       position: absolute;

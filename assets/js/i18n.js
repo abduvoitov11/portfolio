@@ -353,13 +353,13 @@ function setLanguage(lang) {
   // Update language toggle buttons in Menubar & Lock screen
   const toggleBtn = document.getElementById('langToggleBtn');
   if (toggleBtn) {
-    toggleBtn.textContent = lang === 'uz' ? '🇺🇿 UZ' : '🇬🇧 EN';
+    toggleBtn.textContent = lang === 'uz' ? '🇺🇿 UZ' : '🇺🇸 US';
     toggleBtn.title = dict.lang_toggle_title;
   }
 
   const lockLang = document.getElementById('lsLangIndicator');
   if (lockLang) {
-    lockLang.textContent = lang.toUpperCase();
+    lockLang.textContent = lang === 'uz' ? 'UZ' : 'US';
   }
 
   // Update date format on lockscreen & menubar

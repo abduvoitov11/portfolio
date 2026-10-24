@@ -29,16 +29,28 @@ const lsMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
 const lsDaysUz = ['Yak', 'Dush', 'Sesh', 'Chor', 'Pay', 'Jum', 'Shan'];
 const lsMonthsUz = ['yanvar', 'fevral', 'mart', 'aprel', 'may', 'iyun', 'iyul', 'avgust', 'sentabr', 'oktyabr', 'noyabr', 'dekabr'];
 
+function pad(n) { return n < 10 ? '0' + n : n; }
+
 function updateLsClock() {
+  if (!lsClock) return;
   const now = new Date();
-  let h = now.getHours(), m = now.getMinutes();
-  let h12 = h % 12; if (h12 === 0) h12 = 12;
-  lsClock.textContent = `${h12}:${m < 10 ? '0' + m : m}`;
+  const h = now.getHours();
+  const m = pad(now.getMinutes());
   const isUz = (typeof currentLang === 'undefined' || currentLang === 'uz');
+
   if (isUz) {
-    lsDay.textContent = `${lsDaysUz[now.getDay()]}, ${now.getDate()}-${lsMonthsUz[now.getMonth()]}`;
+    lsClock.innerHTML = `${pad(h)}:${m}`;
+    if (lsDay) {
+      lsDay.textContent = `${lsDaysUz[now.getDay()]}, ${now.getDate()}-${lsMonthsUz[now.getMonth()]}`;
+    }
   } else {
-    lsDay.textContent = `${lsDays[now.getDay()]} ${lsMonths[now.getMonth()]} ${now.getDate()}`;
+    let h12 = h % 12;
+    if (h12 === 0) h12 = 12;
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    lsClock.innerHTML = `${h12}:${m}<span class="ls-ampm">${ampm}</span>`;
+    if (lsDay) {
+      lsDay.textContent = `${lsDays[now.getDay()]} ${lsMonths[now.getMonth()]} ${now.getDate()}`;
+    }
   }
 }
 updateLsClock();
@@ -67,19 +79,28 @@ lockscreen.addEventListener('touchend', (e) => {
 
 // ---------- Live clock ----------
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-function pad(n) { return n < 10 ? '0' + n : n; }
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
 function updateClock() {
-  const now = new Date();
-  let h = now.getHours();
-  const ampm = h >= 12 ? 'PM' : 'AM';
-  h = h % 12; if (h === 0) h = 12;
-  const isUz = (typeof currentLang === 'undefined' || currentLang === 'uz');
-  const dName = isUz ? lsDaysUz[now.getDay()] : days[now.getDay()];
-  const mName = isUz ? lsMonthsUz[now.getMonth()].slice(0, 3).toUpperCase() : months[now.getMonth()];
-  const text = `${dName} ${now.getDate()}-${mName}  ${h}:${pad(now.getMinutes())} ${ampm}`;
   const clockEl = document.getElementById('clock');
-  if (clockEl) clockEl.textContent = text;
+  if (!clockEl) return;
+  const now = new Date();
+  const h = now.getHours();
+  const m = pad(now.getMinutes());
+  const isUz = (typeof currentLang === 'undefined' || currentLang === 'uz');
+
+  if (isUz) {
+    const dName = lsDaysUz[now.getDay()];
+    const mName = lsMonthsUz[now.getMonth()].slice(0, 3);
+    clockEl.textContent = `${dName}, ${now.getDate()}-${mName}  ${pad(h)}:${m}`;
+  } else {
+    let h12 = h % 12;
+    if (h12 === 0) h12 = 12;
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    const dName = days[now.getDay()];
+    const mName = months[now.getMonth()];
+    clockEl.textContent = `${dName} ${mName} ${now.getDate()}  ${h12}:${m} ${ampm}`;
+  }
 }
 
 window.updateClockAndDate = function() {
