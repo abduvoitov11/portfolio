@@ -739,7 +739,7 @@
     .desktop {
       flex: 1;
       position: relative;
-      background: url('assets/images/6fba6553c9606fe12ebdc15512e1c6da.jpg') center/cover no-repeat;
+      background: url('../images/090846e8bea467388a24988b6239e86d.jpg') center/cover no-repeat;
       overflow: hidden;
       transition: filter 0.3s;
     }
@@ -783,7 +783,7 @@
       position: absolute;
       inset: 0;
       z-index: 1;
-      background: url('../images/6fba6553c9606fe12ebdc15512e1c6da.jpg') center/cover no-repeat;
+      background: url('../images/090846e8bea467388a24988b6239e86d.jpg') center/cover no-repeat;
     }
 
     .ls-bg::after {

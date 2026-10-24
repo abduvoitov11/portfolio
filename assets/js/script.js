@@ -184,9 +184,9 @@ document.addEventListener('click', (e) => {
 });
 // ---------- Wallpaper Picker ----------
 const wallpapers = [
-  { type: 'image', label: 'Default', value: 'assets/images/6fba6553c9606fe12ebdc15512e1c6da.jpg' },
+  { type: 'image', label: 'Mountains', value: 'assets/images/090846e8bea467388a24988b6239e86d.jpg' },
+  { type: 'image', label: 'Dark Classic', value: 'assets/images/6fba6553c9606fe12ebdc15512e1c6da.jpg' },
   { type: 'image', label: 'Batman', value: 'assets/images/BATMAN__.jfif' },
-  { type: 'image', label: 'Dark Scenery', value: 'assets/images/090846e8bea467388a24988b6239e86d.jpg' },
   { type: 'image', label: '4K Space', value: 'assets/images/4K_WALLPAPER.jpg' },
   { type: 'image', label: 'Aesthetic', value: 'assets/images/download.jfif' },
   { type: 'original', label: 'Aurora' },
