@@ -452,7 +452,8 @@ window.openApp = function (name, url) {
 
 function showPage(pageId) {
   const isHome = pageId === 'home';
-  document.getElementById('home-view').style.display = isHome ? 'flex' : 'none';
+  const homeView = document.getElementById('home-view');
+  if (homeView) homeView.style.display = isHome ? 'flex' : 'none';
   document.body.classList.toggle('page-active', !isHome);
   document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
   if (!isHome) {
