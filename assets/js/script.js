@@ -26,14 +26,20 @@ const lsDay = document.getElementById('lsDay');
 
 const lsDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const lsMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const lsDaysUz = ['Yak', 'Dush', 'Sesh', 'Chor', 'Pay', 'Jum', 'Shan'];
+const lsMonthsUz = ['yanvar', 'fevral', 'mart', 'aprel', 'may', 'iyun', 'iyul', 'avgust', 'sentabr', 'oktyabr', 'noyabr', 'dekabr'];
 
 function updateLsClock() {
   const now = new Date();
   let h = now.getHours(), m = now.getMinutes();
-  // macOS lock screen uses 12-hour, no leading zero
   let h12 = h % 12; if (h12 === 0) h12 = 12;
   lsClock.textContent = `${h12}:${m < 10 ? '0' + m : m}`;
-  lsDay.textContent = `${lsDays[now.getDay()]} ${lsMonths[now.getMonth()]} ${now.getDate()}`;
+  const isUz = (typeof currentLang === 'undefined' || currentLang === 'uz');
+  if (isUz) {
+    lsDay.textContent = `${lsDaysUz[now.getDay()]}, ${now.getDate()}-${lsMonthsUz[now.getMonth()]}`;
+  } else {
+    lsDay.textContent = `${lsDays[now.getDay()]} ${lsMonths[now.getMonth()]} ${now.getDate()}`;
+  }
 }
 updateLsClock();
 const lsClockInterval = setInterval(updateLsClock, 1000);
@@ -68,9 +74,18 @@ function updateClock() {
   let h = now.getHours();
   const ampm = h >= 12 ? 'PM' : 'AM';
   h = h % 12; if (h === 0) h = 12;
-  const text = `${days[now.getDay()]} ${months[now.getMonth()]} ${now.getDate()}  ${h}:${pad(now.getMinutes())} ${ampm}`;
-  document.getElementById('clock').textContent = text;
+  const isUz = (typeof currentLang === 'undefined' || currentLang === 'uz');
+  const dName = isUz ? lsDaysUz[now.getDay()] : days[now.getDay()];
+  const mName = isUz ? lsMonthsUz[now.getMonth()].slice(0, 3).toUpperCase() : months[now.getMonth()];
+  const text = `${dName} ${now.getDate()}-${mName}  ${h}:${pad(now.getMinutes())} ${ampm}`;
+  const clockEl = document.getElementById('clock');
+  if (clockEl) clockEl.textContent = text;
 }
+
+window.updateClockAndDate = function() {
+  updateLsClock();
+  updateClock();
+};
 updateClock();
 setInterval(updateClock, 1000);
 
