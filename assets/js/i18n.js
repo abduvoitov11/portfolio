@@ -33,6 +33,9 @@ const translations = {
     // App Names & Tooltips
     app_mail: "Pochta",
     app_telegram: "Telegram",
+    app_github: "GitHub",
+    app_linkedin: "LinkedIn",
+    app_instagram: "Instagram",
     app_projects: "Proyektlar",
     app_resume: "Rezyume",
     app_about: "Men haqimda",
@@ -40,10 +43,14 @@ const translations = {
     app_skills: "Ko'nikmalar",
     app_contact: "Bog'lanish",
     app_wallpaper: "Fon rasmi",
+    menu_portfolio: "Portfolio",
+    btn_close: "Yopish",
 
     // Wallpaper Picker
     wp_title: "Fon rasmini tanlang",
     wp_upload: "Rasm yuklash",
+    wp_theme: "Mavzu",
+    wp_done: "Tayyor",
 
     // About Page Modal
     about_page_title: "Men haqimda",
@@ -186,6 +193,9 @@ const translations = {
     // App Names & Tooltips
     app_mail: "Mail",
     app_telegram: "Telegram",
+    app_github: "GitHub",
+    app_linkedin: "LinkedIn",
+    app_instagram: "Instagram",
     app_projects: "Projects",
     app_resume: "Resume",
     app_about: "About",
@@ -193,10 +203,14 @@ const translations = {
     app_skills: "Skills",
     app_contact: "Contact",
     app_wallpaper: "Wallpaper",
+    menu_portfolio: "Portfolio",
+    btn_close: "Close",
 
     // Wallpaper Picker
     wp_title: "Choose Wallpaper",
     wp_upload: "Upload",
+    wp_theme: "Theme",
+    wp_done: "Done",
 
     // About Page Modal
     about_page_title: "About Me",

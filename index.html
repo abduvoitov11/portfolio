@@ -108,6 +108,17 @@
 
       <!-- PAGES -->
       <div class="page-content" id="about-page">
+        <div class="page-window-header">
+          <div class="win-btns">
+            <button class="win-btn close" onclick="showPage('home')" title="Yopish (Esc)"></button>
+            <button class="win-btn minimize" onclick="showPage('home')" title="Kichraytirish"></button>
+            <button class="win-btn maximize" onclick="toggleMaximizePage('about-page')" title="Kattalashtirish"></button>
+          </div>
+          <button class="page-esc-badge" onclick="showPage('home')" title="Desktopga qaytish">
+            <span class="esc-kbd">ESC</span>
+            <span data-i18n="btn_close">Yopish</span>
+          </button>
+        </div>
         <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 30px;" data-i18n="about_page_title">Men haqimda</h2>
 
         <div
@@ -154,6 +165,17 @@
         </div>
       </div>
       <div class="page-content" id="projects-page">
+        <div class="page-window-header">
+          <div class="win-btns">
+            <button class="win-btn close" onclick="showPage('home')" title="Yopish (Esc)"></button>
+            <button class="win-btn minimize" onclick="showPage('home')" title="Kichraytirish"></button>
+            <button class="win-btn maximize" onclick="toggleMaximizePage('projects-page')" title="Kattalashtirish"></button>
+          </div>
+          <button class="page-esc-badge" onclick="showPage('home')" title="Desktopga qaytish">
+            <span class="esc-kbd">ESC</span>
+            <span data-i18n="btn_close">Yopish</span>
+          </button>
+        </div>
         <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 30px;" data-i18n="projects_page_title">Proyektlar</h2>
 
         <div style="display: flex; flex-direction: column; gap: 24px;">
@@ -276,6 +298,17 @@
         </div>
       </div>
       <div class="page-content" id="experience-page">
+        <div class="page-window-header">
+          <div class="win-btns">
+            <button class="win-btn close" onclick="showPage('home')" title="Yopish (Esc)"></button>
+            <button class="win-btn minimize" onclick="showPage('home')" title="Kichraytirish"></button>
+            <button class="win-btn maximize" onclick="toggleMaximizePage('experience-page')" title="Kattalashtirish"></button>
+          </div>
+          <button class="page-esc-badge" onclick="showPage('home')" title="Desktopga qaytish">
+            <span class="esc-kbd">ESC</span>
+            <span data-i18n="btn_close">Yopish</span>
+          </button>
+        </div>
         <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 30px;" data-i18n="exp_page_title">Tajriba</h2>
 
         <div style="display: flex; flex-direction: column; gap: 24px; position: relative;">
@@ -367,6 +400,17 @@
         </div>
       </div>
       <div class="page-content" id="skills-page">
+        <div class="page-window-header">
+          <div class="win-btns">
+            <button class="win-btn close" onclick="showPage('home')" title="Yopish (Esc)"></button>
+            <button class="win-btn minimize" onclick="showPage('home')" title="Kichraytirish"></button>
+            <button class="win-btn maximize" onclick="toggleMaximizePage('skills-page')" title="Kattalashtirish"></button>
+          </div>
+          <button class="page-esc-badge" onclick="showPage('home')" title="Desktopga qaytish">
+            <span class="esc-kbd">ESC</span>
+            <span data-i18n="btn_close">Yopish</span>
+          </button>
+        </div>
         <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 30px;" data-i18n="skills_page_title">Ko'nikmalar</h2>
 
         <div style="display: flex; gap: 50px; flex-wrap: wrap;">
@@ -461,6 +505,17 @@
         </div>
       </div>
       <div class="page-content" id="resume-page">
+        <div class="page-window-header">
+          <div class="win-btns">
+            <button class="win-btn close" onclick="showPage('home')" title="Yopish (Esc)"></button>
+            <button class="win-btn minimize" onclick="showPage('home')" title="Kichraytirish"></button>
+            <button class="win-btn maximize" onclick="toggleMaximizePage('resume-page')" title="Kattalashtirish"></button>
+          </div>
+          <button class="page-esc-badge" onclick="showPage('home')" title="Desktopga qaytish">
+            <span class="esc-kbd">ESC</span>
+            <span data-i18n="btn_close">Yopish</span>
+          </button>
+        </div>
         <div
           style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px;">
           <h2 style="font-size: 32px; font-weight: 700; margin: 0;" data-i18n="resume_page_title">Rezyume</h2>
@@ -577,6 +632,17 @@
       </div>
 
       <div class="page-content" id="contact-page">
+        <div class="page-window-header">
+          <div class="win-btns">
+            <button class="win-btn close" onclick="showPage('home')" title="Yopish (Esc)"></button>
+            <button class="win-btn minimize" onclick="showPage('home')" title="Kichraytirish"></button>
+            <button class="win-btn maximize" onclick="toggleMaximizePage('contact-page')" title="Kattalashtirish"></button>
+          </div>
+          <button class="page-esc-badge" onclick="showPage('home')" title="Desktopga qaytish">
+            <span class="esc-kbd">ESC</span>
+            <span data-i18n="btn_close">Yopish</span>
+          </button>
+        </div>
         <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 30px;" data-i18n="contact_page_title">Bog'lanish</h2>
 
         <div style="display: flex; gap: 40px; flex-wrap: wrap;">
@@ -807,29 +873,29 @@
               </svg>
             </span>
             <div class="menu-dropdown">
-              <div class="mi">About This Mac</div>
+              <div class="mi" onclick="showPage('about')">About This Mac</div>
               <div class="sep"></div>
-              <div class="mi">System Settings…</div>
-              <div class="mi">App Store…</div>
+              <div class="mi" onclick="document.getElementById('wallpaperDockBtn').click()">System Settings…</div>
+              <div class="mi" onclick="window.open('https://github.com/abduvoitov11', '_blank')">App Store…</div>
               <div class="sep"></div>
               <div class="mi disabled">Recent Items<span class="kbd">▸</span></div>
               <div class="sep"></div>
-              <div class="mi">Force Quit…<span class="kbd">⌥⌘⎋</span></div>
+              <div class="mi" onclick="showPage('home')">Force Quit…<span class="kbd">⌥⌘⎋</span></div>
               <div class="sep"></div>
-              <div class="mi">Sleep</div>
-              <div class="mi">Restart…</div>
-              <div class="mi">Shut Down…</div>
+              <div class="mi" onclick="doLock()">Sleep</div>
+              <div class="mi" onclick="location.reload()">Restart…</div>
+              <div class="mi" onclick="doLock()">Shut Down…</div>
               <div class="sep"></div>
-              <div class="mi">Lock Screen<span class="kbd">⌃⌘Q</span></div>
-              <div class="mi">Log Out…<span class="kbd">⇧⌘Q</span></div>
+              <div class="mi" onclick="doLock()">Lock Screen<span class="kbd">⌃⌘Q</span></div>
+              <div class="mi" onclick="doLock()">Log Out…<span class="kbd">⇧⌘Q</span></div>
             </div>
           </div>
-          <span class="menu-item bold" style="cursor: pointer;" onclick="showPage('home')">Portfolio</span>
+          <span class="menu-item bold" style="cursor: pointer;" onclick="showPage('home')" data-i18n="menu_portfolio">Portfolio</span>
           <div class="menu-root">
-            <span class="menu-item" style="cursor: pointer;" onclick="showPage('resume')">Resume</span>
+            <span class="menu-item" style="cursor: pointer;" onclick="showPage('resume')" data-i18n="app_resume">Resume</span>
           </div>
           <div class="menu-root" data-menu="file">
-            <span class="menu-item" style="cursor: pointer;" onclick="showPage('about')">About</span>
+            <span class="menu-item" style="cursor: pointer;" onclick="showPage('about')" data-i18n="app_about">About</span>
             <div class="menu-dropdown">
               <div class="mi">New Finder Window<span class="kbd">⌘N</span></div>
               <div class="mi">New Folder<span class="kbd">⇧⌘N</span></div>
@@ -846,7 +912,7 @@
             </div>
           </div>
           <div class="menu-root" data-menu="edit">
-            <span class="menu-item" style="cursor: pointer;" onclick="showPage('projects')">Projects</span>
+            <span class="menu-item" style="cursor: pointer;" onclick="showPage('projects')" data-i18n="app_projects">Projects</span>
             <div class="menu-dropdown">
               <div class="mi">Undo<span class="kbd">⌘Z</span></div>
               <div class="mi">Redo<span class="kbd">⇧⌘Z</span></div>
@@ -861,7 +927,7 @@
             </div>
           </div>
           <div class="menu-root" data-menu="view">
-            <span class="menu-item" style="cursor: pointer;" onclick="showPage('experience')">Experience</span>
+            <span class="menu-item" style="cursor: pointer;" onclick="showPage('experience')" data-i18n="app_experience">Experience</span>
             <div class="menu-dropdown">
               <div class="mi">as Icons<span class="kbd">⌘1</span></div>
               <div class="mi">as List<span class="kbd">⌘2</span></div>
@@ -877,7 +943,7 @@
             </div>
           </div>
           <div class="menu-root" data-menu="go">
-            <span class="menu-item" style="cursor: pointer;" onclick="showPage('skills')">Skills</span>
+            <span class="menu-item" style="cursor: pointer;" onclick="showPage('skills')" data-i18n="app_skills">Skills</span>
             <div class="menu-dropdown">
               <div class="mi">Back<span class="kbd">⌘[</span></div>
               <div class="mi">Forward<span class="kbd">⌘]</span></div>
@@ -898,7 +964,7 @@
             </div>
           </div>
           <div class="menu-root" data-menu="window">
-            <span class="menu-item" style="cursor: pointer;" onclick="showPage('contact')">Contact</span>
+            <span class="menu-item" style="cursor: pointer;" onclick="showPage('contact')" data-i18n="app_contact">Contact</span>
             <div class="menu-dropdown">
               <div class="mi">Minimize<span class="kbd">⌘M</span></div>
               <div class="mi">Zoom</div>
@@ -972,13 +1038,13 @@
               </svg></span><span>Bluetooth</span></div>
         </div>
         <div class="cc-tile wide">
-          <div class="cc-row"><span class="cc-icon" id="afIcon"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 3 2 13h4v8h12v-8h4z" />
+          <div class="cc-row"><span class="cc-icon" id="afIcon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/>
               </svg></span><span>Airplane Mode</span></div>
         </div>
         <div class="cc-tile wide" style="grid-template-columns:1fr;">
           <span>Display</span>
-          <div class="cc-slider"></div>
+          <div class="cc-slider" id="ccDisplaySlider"></div>
         </div>
         <div class="cc-tile wide" style="grid-template-columns:1fr;">
           <span>Sound</span>
@@ -991,12 +1057,16 @@
       <!-- Spotlight -->
       <div class="overlay" id="spotlightOverlay">
         <div class="overlay-dim" data-close="spotlight"></div>
-        <div class="spotlight-bar">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4">
-            <circle cx="7" cy="7" r="5.4" />
-            <line x1="11" y1="11" x2="15" y2="15" stroke-linecap="round" />
-          </svg>
-          <input type="text" placeholder="Spotlight Qidiruv" data-i18n-placeholder="spotlight_placeholder" id="spotlightInput" autocomplete="off">
+        <div class="spotlight-bar-container">
+          <div class="spotlight-bar">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4">
+              <circle cx="7" cy="7" r="5.4" />
+              <line x1="11" y1="11" x2="15" y2="15" stroke-linecap="round" />
+            </svg>
+            <input type="text" placeholder="Spotlight Qidiruv" data-i18n-placeholder="spotlight_placeholder" id="spotlightInput" autocomplete="off">
+            <button class="spotlight-clear-btn" id="spotlightClear" style="display:none;" title="Tozalash">×</button>
+          </div>
+          <div class="spotlight-results" id="spotlightResults"></div>
         </div>
       </div>
 
@@ -1022,7 +1092,7 @@
               <path d="M8 2v9M4 6l4-4 4 4" />
               <path d="M2 13h12" stroke-linecap="round" />
             </svg>
-            Upload
+            <span data-i18n="wp_upload">Rasm yuklash</span>
             <input type="file" accept="image/*" id="wpUpload">
           </label>
           <button id="themeToggleBtn" class="wp-upload-btn" style="flex: 1; background: rgba(255, 255, 255, 0.1);">
@@ -1038,9 +1108,9 @@
               <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
-            Theme
+            <span data-i18n="wp_theme">Mavzu</span>
           </button>
-          <button class="wp-close-btn" id="wpClose" style="flex: 1;">Done</button>
+          <button class="wp-close-btn" id="wpClose" style="flex: 1;" data-i18n="wp_done">Tayyor</button>
         </div>
       </div>
 
