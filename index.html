@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torabek Abduvoitov | AI & Full-Stack Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Coiny&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Prevent Flash of Unstyled Content (FOUC) */
+    html {
+      background-color: #000;
+    }
+
+    body {
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      overflow: hidden;
+    }
+
+    body.loaded {
+      opacity: 1;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- ============ LOCK SCREEN — macOS Sonoma ============ -->
+  <div class="lockscreen" id="lockscreen">
+    <div class="ls-bg"></div>
+
+    <div class="ls-status-bar">
+      <div class="ls-status-right">
+        <span>U.S.</span>
+        <svg class="ls-wifi" viewBox="0 0 16 12" width="16" height="12">
+          <path fill="currentColor" d="M8 10.4a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6z" />
+          <path fill="currentColor"
+            d="M8 5.4c1.65 0 3.15.62 4.3 1.64a.7.7 0 0 1 .04 1.02l-.78.8a.62.62 0 0 1-.86.02A4.9 4.9 0 0 0 8 7.5c-1.06 0-2.04.36-2.7.94a.62.62 0 0 1-.86-.02l-.78-.8a.7.7 0 0 1 .04-1.02A6.6 6.6 0 0 1 8 5.4z" />
+          <path fill="currentColor"
+            d="M8 1.9c2.55 0 4.86.95 6.6 2.53a.7.7 0 0 1 .04 1.02l-.74.76a.6.6 0 0 1-.83.03A8.1 8.1 0 0 0 8 4.3a8.1 8.1 0 0 0-5.07 1.94.6.6 0 0 1-.83-.03l-.74-.76a.7.7 0 0 1 .04-1.02A9.9 9.9 0 0 1 8 1.9z" />
+        </svg>
+        <span>91%</span>
+        <svg class="ls-battery" width="24" height="12" viewBox="0 0 24 12" fill="none">
+          <rect x="0.75" y="0.75" width="20" height="10.5" rx="2.5" stroke="currentColor" stroke-width="1.1" />
+          <rect x="2.25" y="2.25" width="17" height="7.5" rx="1.4" fill="currentColor" />
+          <rect x="21.5" y="4" width="1.8" height="4" rx="0.9" fill="currentColor" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Day + Date -->
+    <div class="ls-top">
+      <div class="ls-day" id="lsDay">Thu Jul 17</div>
+    </div>
+
+    <!-- Giant clock -->
+    <div class="ls-clock-wrap">
+      <div class="ls-clock" id="lsClock">6:56</div>
+    </div>
+    <div class="ls-name">Torabek's Portfolio</div>
+
+    <!-- iOS-style lock screen quick actions (mobile only) -->
+    <div class="ls-quick-actions">
+      <button class="ls-quick-btn" type="button" aria-label="Flashlight" onclick="event.stopPropagation()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 2h6l1.5 3.5-1.5 1.5H9L7.5 5.5 9 2z" />
+          <line x1="7.5" y1="7" x2="16.5" y2="7" />
+          <rect x="8.5" y="7" width="7" height="14" rx="1.5" />
+        </svg>
+      </button>
+      <button class="ls-quick-btn" type="button" aria-label="Camera" onclick="event.stopPropagation()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+          <circle cx="12" cy="13" r="4" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Users -->
+
+    <!-- Swipe / click hint -->
+    <div class="ls-swipe-hint">
+      <div class="ls-swipe-chevron">
+        <svg width="22" height="13" viewBox="0 0 22 13" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 1l10 10L21 1" />
+        </svg>
+      </div>
+      <div class="ls-swipe-label"
+        style="font-size:11.5px; color: var(--text-muted); letter-spacing:1px; text-transform:uppercase; font-weight:500;">
+        Click anywhere to unlock</div>
+    </div>
+  </div>
+
+  <!-- ============ DESKTOP ============ -->
+  <div class="desktop-wrapper">
+    <div class="desktop">
+
+      <!-- Profile Widget -->
+      <div class="profile-widget-container" id="home-view">
+        <div class="widget-row">
+          <div class="profile-widget">
+            <img src="assets/images/torabek.png" alt="Profile">
+          </div>
+
+          <!-- Mobile App Grid (Only visible on mobile) -->
+          <div class="mobile-apps-grid hide-on-desktop">
+            <div class="mobile-app-icon" onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=rgobzpe@gmail.com', '_blank')">
+              <div class="mobile-app-squircle">
+                <img src="assets/icons/gmail.png" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.5);">
+              </div>
+              <span>Mail</span>
+            </div>
+            
+            <div class="mobile-app-icon" onclick="openApp('Free Rider HD', 'https://www.freeriderhd.com/')">
+              <div class="mobile-app-squircle">
+                <img src="assets/images/freerider.jfif" style="width: 100%; height: 100%; object-fit: cover; border-radius: 22.5%;">
+              </div>
+              <span>Game</span>
+            </div>
+
+            <div class="mobile-app-icon" onclick="showPage('projects')">
+              <div class="mobile-app-squircle mobile-app-squircle--glass">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                  <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                  <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+                  <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+                </svg>
+              </div>
+              <span>Projects</span>
+            </div>
+
+            <div class="mobile-app-icon" onclick="showPage('resume')">
+              <div class="mobile-app-squircle mobile-app-squircle--glass">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <span>Resume</span>
+            </div>
+          </div>
+
+          <!-- Services Widget -->
+          <div class="services-widget">
+            <h2>What I'm doing</h2>
+
+            <div class="service-item">
+              <div class="service-icon"><svg viewBox="0 0 24 24">
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V17a1 1 0 0 1-2 0v-.07A7.003 7.003 0 0 1 5.07 11H5a1 1 0 0 1 0-2h.07A7.003 7.003 0 0 1 11 5.07V5a1 1 0 0 1 2 0v.07A7.003 7.003 0 0 1 18.93 11H19a1 1 0 0 1 0 2h-.07A7.003 7.003 0 0 1 13 16.93z" fill="currentColor"/>
+                </svg></div>
+              <div class="service-text">
+                <h4>AI & Machine Learning</h4>
+                <p>Developing intelligent systems, LLMs, Computer Vision and neural network models in PyTorch & TensorFlow.</p>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="service-icon"><svg viewBox="0 0 24 24">
+                  <polyline points="16 18 22 12 16 6" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <polyline points="8 6 2 12 8 18" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg></div>
+              <div class="service-text">
+                <h4>Full-Stack Web</h4>
+                <p>Fast, modern web apps and APIs built with FastAPI, Python, React, Next.js, and TypeScript.</p>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="service-icon"><svg viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <line x1="3" y1="9" x2="21" y2="9" stroke="currentColor" stroke-width="2"/>
+                  <line x1="9" y1="21" x2="9" y2="9" stroke="currentColor" stroke-width="2"/>
+                </svg></div>
+              <div class="service-text">
+                <h4>Linux & Security</h4>
+                <p>Linux system administration, Docker containerization, security hardening and automated tooling.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- About Widget -->
+        <div class="about-widget" onclick="showPage('about')">
+          <h2>About me</h2>
+          <p>Hi, I’m Torabek Abduvoitov, an AI & Full-Stack Developer from Tashkent, Uzbekistan. I specialize in Artificial Intelligence, Deep Learning (LLMs), and scalable web applications. My focus is on building intelligent systems that are functional, high-performance, and visually engaging.</p>
+          <p>I bring engineering rigor to every project, ensuring robust architecture while delivering an intuitive user experience. My aim is to combine artificial intelligence and software engineering to transform ideas into impactful, scalable solutions.</p>
+        </div>
+
+        <!-- Music Widget -->
+        <div class="music-player-widget" id="musicPlayerWidget">
+          <audio id="bgMusic" src="assets/music/RED - Seedhe Maut.mp3" loop></audio>
+          <div class="music-vinyl-container">
+            <div class="vinyl-record">
+              <div class="vinyl-label"></div>
+              <div class="vinyl-hole"></div>
+            </div>
+            <div class="tonearm">
+              <div class="tonearm-pivot"></div>
+              <div class="tonearm-arm"></div>
+              <div class="tonearm-head"></div>
+            </div>
+          </div>
+          <div class="music-info">
+            <div class="music-title">RED</div>
+            <div class="music-artist">Seedhe Maut</div>
+            <div class="music-controls">
+              <!-- Previous -->
+              <svg class="control-icon" viewBox="0 0 24 24">
+                <path d="M19 20L9 12l10-8v16zM5 19h2V5H5v14z" />
+              </svg>
+              <!-- Play -->
+              <svg class="control-icon play-icon" id="playPauseBtn" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <!-- Next -->
+              <svg class="control-icon" viewBox="0 0 24 24">
+                <path d="M5 4l10 8-10 8V4zm14 1v14h-2V5h2z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PAGES -->
+      <div class="page-content" id="about-page">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 30px;">About Me</h2>
+
+        <div
+          style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px; padding: 30px; display: flex; flex-direction: column; gap: 20px;">
+          <p style="font-size: 16px; line-height: 1.8; color: var(--text-main); margin: 0;">Hi, I'm
+            <strong>Torabek Abduvoitov</strong>, an ambitious AI & Full-Stack Developer based in Tashkent, Uzbekistan. I specialize in building intelligent systems, Machine Learning models, and modern, high-performance web applications.
+          </p>
+
+          <p style="font-size: 16px; line-height: 1.8; color: var(--text-main); margin: 0;">My passion lies at the intersection of Artificial Intelligence, robust backend architectures, and delightful user interfaces. From engineering fine-tuned LLM workflows and Computer Vision pipelines in Python to crafting responsive full-stack applications with FastAPI, React, and Next.js, I build software that creates real impact.</p>
+
+          <div>
+            <h3 style="font-size: 18px; font-weight: 600; color: #0a84ff; margin-bottom: 12px; margin-top: 10px;">My
+              core competencies:</h3>
+            <ul
+              style="margin: 0; padding-left: 20px; font-size: 16px; color: var(--text-main); line-height: 1.8; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">
+              <li>Artificial Intelligence & Deep Learning (PyTorch, TensorFlow)</li>
+              <li>LLMs, AI Agents & RAG Architecture</li>
+              <li>High-Performance Backend (FastAPI, Python, Django)</li>
+              <li>Modern Frontend (React, Next.js, TypeScript, Tailwind)</li>
+              <li>Database Design (PostgreSQL, MongoDB, MySQL, Redis)</li>
+              <li>Linux System Administration & Docker DevOps</li>
+              <li>Competitive Programming (Algorithms & Data Structures in C++)</li>
+              <li>Application Security & Web Penetration Testing</li>
+            </ul>
+          </div>
+
+          <p style="font-size: 16px; line-height: 1.8; color: var(--text-main); margin: 0;">I place immense emphasis on clean code, modular architecture, and high security. When I'm not developing AI platforms or full-stack software, I compete in Informatics Olympiads and research cybersecurity vulnerabilities.</p>
+
+          <div style="margin-top: 10px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div style="font-weight: 600; font-size: 16px; margin-bottom: 12px; color: #bf5af2;">Core Tech Stack</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 14px;">Python</span>
+              <span style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 14px;">PyTorch</span>
+              <span style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 14px;">FastAPI</span>
+              <span style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 14px;">React</span>
+              <span style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 14px;">Next.js</span>
+              <span style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 14px;">TypeScript</span>
+              <span style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 14px;">C++</span>
+              <span style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 14px;">Linux / Bash</span>
+              <span style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 14px;">Docker</span>
+              <span style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 14px;">PostgreSQL</span>
+              <span style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 14px;">Git / GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-content" id="projects-page">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 30px;">Projects</h2>
+
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Project 1: macOS Web Portfolio -->
+          <div
+            style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 24px; border-radius: 16px; transition: transform 0.2s, background 0.2s;">
+            <div
+              style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+              <div>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 4px 0; color: #ff9f0a;">macOS Web Environment (This Portfolio!)</h3>
+                <div style="font-size: 15px; font-weight: 500; color: var(--text-muted);">Interactive Multi-Window OS Experience</div>
+              </div>
+              <div
+                style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 13px; font-weight: 500;">
+                Featured</div>
+            </div>
+            <p style="font-size: 16px; line-height: 1.7; color: var(--text-main); margin: 0;">Architected a fully functional, interactive macOS replica in the browser. Features custom multi-window manager, lock screen with live clock, glassmorphism UI, interactive audio player, dynamic wallpaper engine, and spotlight search.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">JavaScript</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">HTML5 / CSS3</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">Glassmorphism</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">GitHub Pages</span>
+            </div>
+          </div>
+
+          <!-- Project 2: Kiloli OPTOM -->
+          <div
+            style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 24px; border-radius: 16px; transition: transform 0.2s, background 0.2s;">
+            <div
+              style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+              <div>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 4px 0; color: #0a84ff;">
+                  <a href="https://optom-six.vercel.app/" target="_blank" style="color: inherit; text-decoration: none;">Kiloli OPTOM Platform ↗</a>
+                </h3>
+                <div style="font-size: 15px; font-weight: 500; color: var(--text-muted);">B2B Wholesale E-Commerce & Logistic Platform</div>
+              </div>
+              <div
+                style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 13px; font-weight: 500;">
+                Production</div>
+            </div>
+            <p style="font-size: 16px; line-height: 1.7; color: var(--text-main); margin: 0;">Comprehensive online wholesale marketplace for purchasing imported apparel by weight (kg). Built with React frontend and FastAPI backend, featuring dynamic weight-based pricing, interactive order processing, catalog search, and automated checkout.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">React</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">FastAPI</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">Python</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <!-- Project 3: AvtoEmaktab -->
+          <div
+            style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 24px; border-radius: 16px; transition: transform 0.2s, background 0.2s;">
+            <div
+              style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+              <div>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 4px 0; color: #30d158;">
+                  <a href="https://github.com/abduvoitov11/AvtoEmaktab" target="_blank" style="color: inherit; text-decoration: none;">AvtoEmaktab Platform ↗</a>
+                </h3>
+                <div style="font-size: 15px; font-weight: 500; color: var(--text-muted);">Driving Academy Management & Exam Simulator</div>
+              </div>
+              <div
+                style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 13px; font-weight: 500;">
+                Full-Stack</div>
+            </div>
+            <p style="font-size: 16px; line-height: 1.7; color: var(--text-main); margin: 0;">Comprehensive driving academy education and examination system. Implements interactive testing engine with real-time score analytics, student progress tracking, and administrative control panels.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">Python</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">Django / FastAPI</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">PostgreSQL</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">REST API</span>
+            </div>
+          </div>
+
+          <!-- Project 4: Focus Media Tashkent -->
+          <div
+            style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 24px; border-radius: 16px; transition: transform 0.2s, background 0.2s;">
+            <div
+              style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+              <div>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 4px 0; color: #bf5af2;">
+                  <a href="https://abduvoitov11.github.io/focus-media-toshkent/" target="_blank" style="color: inherit; text-decoration: none;">Focus Media Tashkent ↗</a>
+                </h3>
+                <div style="font-size: 15px; font-weight: 500; color: var(--text-muted);">Digital Media Agency & Production Studio</div>
+              </div>
+              <div
+                style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 13px; font-weight: 500;">
+                Web</div>
+            </div>
+            <p style="font-size: 16px; line-height: 1.7; color: var(--text-main); margin: 0;">High-impact digital agency website showcasing video production, marketing campaigns, and brand identity design. Built with ultra-smooth animations, fluid responsive layout, and mobile-first aesthetics.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">HTML5</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">CSS3 Animation</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Project 5: GrayHat Security Tools -->
+          <div
+            style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 24px; border-radius: 16px; transition: transform 0.2s, background 0.2s;">
+            <div
+              style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+              <div>
+                <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 4px 0; color: #ff375f;">
+                  <a href="https://github.com/abduvoitov11/GrayHat-tools" target="_blank" style="color: inherit; text-decoration: none;">GrayHat Security Toolkit ↗</a>
+                </h3>
+                <div style="font-size: 15px; font-weight: 500; color: var(--text-muted);">Cybersecurity & Automated Reconnaissance Suite</div>
+              </div>
+              <div
+                style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 13px; font-weight: 500;">
+                Security</div>
+            </div>
+            <p style="font-size: 16px; line-height: 1.7; color: var(--text-main); margin: 0;">Collection of custom automated penetration testing tools and network diagnostics designed for Linux environments. Includes port auditing, vulnerability scanning, and protocol fuzzing modules.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">Python</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">Bash</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">Linux Sockets</span>
+              <span style="font-size: 13px; padding: 4px 10px; background: var(--glass-bg-light); border-radius: 6px;">OWASP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-content" id="experience-page">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 30px;">Experience</h2>
+
+        <div style="display: flex; flex-direction: column; gap: 24px; position: relative;">
+          <!-- Timeline line -->
+          <div
+            style="position: absolute; left: 19px; top: 10px; bottom: 20px; width: 2px; background: var(--glass-bg-light); border-radius: 2px;">
+          </div>
+
+          <!-- Experience 1 -->
+          <div style="position: relative; padding-left: 50px;">
+            <div
+              style="position: absolute; left: 14px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #0a84ff; box-shadow: 0 0 0 4px rgba(10,132,255,0.2);">
+            </div>
+            <div
+              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 24px; border-radius: 16px;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+                <div>
+                  <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 4px 0;">AI & Full-Stack Developer</h3>
+                  <div style="font-size: 16px; color: #0a84ff; font-weight: 500;">Independent / Freelance • Tashkent, Uzbekistan</div>
+                </div>
+                <div
+                  style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 13px; font-weight: 500;">
+                  2023 - Present</div>
+              </div>
+              <p style="font-size: 15px; line-height: 1.7; color: var(--text-main); margin: 0 0 16px 0;">Leading the development of intelligent web systems and machine learning integrations for enterprise clients:</p>
+              <ul
+                style="margin: 0; padding-left: 20px; font-size: 15px; color: var(--text-main); line-height: 1.7; display: flex; flex-direction: column; gap: 6px;">
+                <li>Designed neural network architectures and LLM agent pipelines using Python, PyTorch, and Hugging Face.</li>
+                <li>Built scalable, async REST APIs using FastAPI, PostgreSQL, and Docker containerization.</li>
+                <li>Created dynamic, reactive user dashboards in React and Next.js with high performance metrics.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div style="position: relative; padding-left: 50px;">
+            <div
+              style="position: absolute; left: 14px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #30d158; box-shadow: 0 0 0 4px rgba(48,209,88,0.2);">
+            </div>
+            <div
+              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 24px; border-radius: 16px;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+                <div>
+                  <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 4px 0;">Software Engineer & Automation Specialist</h3>
+                  <div style="font-size: 16px; color: #30d158; font-weight: 500;">Various Tech Projects • Tashkent, Uzbekistan</div>
+                </div>
+                <div
+                  style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 13px; font-weight: 500;">
+                  2022 - 2023</div>
+              </div>
+              <p style="font-size: 15px; line-height: 1.7; color: var(--text-main); margin: 0 0 16px 0;">Built automated software pipelines, web scraping engines, and business Telegram bot infrastructures:</p>
+              <ul
+                style="margin: 0; padding-left: 20px; font-size: 15px; color: var(--text-main); line-height: 1.7; display: flex; flex-direction: column; gap: 6px;">
+                <li>Engineered high-concurrency Telegram bots handling automated user flows, payments, and notifications.</li>
+                <li>Automated data extraction and ETL workflows using Python, Beautiful Soup, and asynchronous asyncio.</li>
+                <li>Managed Linux production VPS environments, security policies, and system monitoring.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 3 -->
+          <div style="position: relative; padding-left: 50px;">
+            <div
+              style="position: absolute; left: 14px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #bf5af2; box-shadow: 0 0 0 4px rgba(191,90,242,0.2);">
+            </div>
+            <div
+              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 24px; border-radius: 16px;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+                <div>
+                  <h3 style="font-size: 20px; font-weight: 600; margin: 0 0 4px 0;">Competitive Programming & Security Auditing</h3>
+                  <div style="font-size: 16px; color: #bf5af2; font-weight: 500;">Informatics Olympiad Competitor & White-Hat Researcher</div>
+                </div>
+                <div
+                  style="padding: 6px 12px; background: var(--glass-bg-light); border-radius: 20px; font-size: 13px; font-weight: 500;">
+                  2021 - Present</div>
+              </div>
+              <p style="font-size: 15px; line-height: 1.7; color: var(--text-main); margin: 0 0 16px 0;">Participating in algorithmic programming competitions and web security research:</p>
+              <ul
+                style="margin: 0; padding-left: 20px; font-size: 15px; color: var(--text-main); line-height: 1.7; display: flex; flex-direction: column; gap: 6px;">
+                <li>Competed in Uzbekistan's National Informatics Olympiad (Asosiy fan olimpiadasi) with C++ and Python.</li>
+                <li>Mastered advanced algorithms: Binary Search, Graph traversal, Dynamic Programming, and Number Theory.</li>
+                <li>Conducting authorized white-box penetration testing and OWASP vulnerability mitigations.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-content" id="skills-page">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 30px;">My Skills</h2>
+
+        <div style="display: flex; gap: 50px; flex-wrap: wrap;">
+          <!-- Core Skills (Progress Bars) -->
+          <div style="flex: 1.5; min-width: 300px;">
+            <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 24px; color: var(--text-main);">Core Expertise</h3>
+
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                  <span style="font-weight: 500; font-size: 15px;">Artificial Intelligence & ML (PyTorch, LLMs)</span>
+                  <span style="color: var(--text-muted); font-size: 14px;">95%</span>
+                </div>
+                <div style="width: 100%; height: 8px; background: var(--glass-bg-light); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 95%; height: 100%; background: #0a84ff; border-radius: 4px;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                  <span style="font-weight: 500; font-size: 15px;">Python & Backend Engineering (FastAPI, Django)</span>
+                  <span style="color: var(--text-muted); font-size: 14px;">92%</span>
+                </div>
+                <div style="width: 100%; height: 8px; background: var(--glass-bg-light); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 92%; height: 100%; background: #30d158; border-radius: 4px;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                  <span style="font-weight: 500; font-size: 15px;">Full-Stack Web (React, Next.js, TypeScript)</span>
+                  <span style="color: var(--text-muted); font-size: 14px;">88%</span>
+                </div>
+                <div style="width: 100%; height: 8px; background: var(--glass-bg-light); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 88%; height: 100%; background: #ff9f0a; border-radius: 4px;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                  <span style="font-weight: 500; font-size: 15px;">Linux, Bash & Docker DevOps</span>
+                  <span style="color: var(--text-muted); font-size: 14px;">86%</span>
+                </div>
+                <div style="width: 100%; height: 8px; background: var(--glass-bg-light); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 86%; height: 100%; background: #bf5af2; border-radius: 4px;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                  <span style="font-weight: 500; font-size: 15px;">Database Systems (PostgreSQL, MongoDB, Redis)</span>
+                  <span style="color: var(--text-muted); font-size: 14px;">85%</span>
+                </div>
+                <div style="width: 100%; height: 8px; background: var(--glass-bg-light); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 85%; height: 100%; background: #ff375f; border-radius: 4px;"></div>
+                </div>
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                  <span style="font-weight: 500; font-size: 15px;">Competitive Programming & Algorithms (C++)</span>
+                  <span style="color: var(--text-muted); font-size: 14px;">90%</span>
+                </div>
+                <div style="width: 100%; height: 8px; background: var(--glass-bg-light); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 90%; height: 100%; background: #64d2ff; border-radius: 4px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technologies Grid -->
+          <div style="flex: 1; min-width: 250px;">
+            <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 24px; color: var(--text-main);">Technologies</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">Python</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">PyTorch</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">FastAPI</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">React</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">Next.js</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">TypeScript</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">C++</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">Linux</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">Bash</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">Docker</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">PostgreSQL</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">MongoDB</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">Git / GitHub</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">Tailwind CSS</span>
+              <span style="padding: 10px 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; font-size: 14px; font-weight: 500;">Three.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-content" id="resume-page">
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px;">
+          <h2 style="font-size: 32px; font-weight: 700; margin: 0;">Resume</h2>
+          <a href="mailto:rgobzpe@gmail.com"
+            style="padding: 12px 24px; background: #0a84ff; color: #fff; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Contact via Email
+          </a>
+        </div>
+
+        <!-- Resume Content -->
+        <div
+          style="display: flex; flex-direction: column; gap: 30px; padding: 30px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px;">
+
+          <!-- Header -->
+          <div style="text-align: center; border-bottom: 1px solid var(--glass-border); padding-bottom: 20px;">
+            <h1 style="font-size: 36px; margin: 0 0 10px 0; font-weight: 700;">TORABEK ABDUVOITOV</h1>
+            <div
+              style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; font-size: 16px; color: var(--text-main);">
+              <span>rgobzpe@gmail.com</span>
+              <span>•</span>
+              <span>Telegram: @TORABEK_ABDUVOITOV</span>
+              <span>•</span>
+              <span>GitHub: abduvoitov11</span>
+              <span>•</span>
+              <span>Tashkent, Uzbekistan</span>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div>
+            <h3
+              style="font-size: 20px; font-weight: 600; color: #0a84ff; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">
+              Professional Summary</h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-main); margin: 0;">
+              Passionate AI Developer and Full-Stack Software Engineer with expertise in building deep learning systems, LLM agent architectures, and responsive web platforms. Strong background in algorithmic problem solving (Informatics Olympiads), Linux system administration, and modern software design patterns.
+            </p>
+          </div>
+
+          <!-- Experience -->
+          <div>
+            <h3
+              style="font-size: 20px; font-weight: 600; color: #0a84ff; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">
+              Work Experience</h3>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <div>
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 4px;">
+                  <div style="font-weight: 600; font-size: 18px;">AI & Full-Stack Developer</div>
+                  <div style="font-size: 15px; color: var(--text-muted);">2023 - Present</div>
+                </div>
+                <div style="font-size: 15px; color: #0a84ff; margin-bottom: 8px;">Tashkent, Uzbekistan</div>
+                <ul style="margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.7; color: var(--text-main);">
+                  <li>Engineered custom AI solutions, RAG pipelines, and LLM-powered assistants using Python and PyTorch.</li>
+                  <li>Architected REST APIs using FastAPI, connecting frontend applications to scalable cloud databases.</li>
+                  <li>Developed responsive client interfaces using React, Next.js, and TypeScript.</li>
+                </ul>
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 4px;">
+                  <div style="font-weight: 600; font-size: 18px;">Software Engineer & Security Researcher</div>
+                  <div style="font-size: 15px; color: var(--text-muted);">2022 - 2023</div>
+                </div>
+                <div style="font-size: 15px; color: #30d158; margin-bottom: 8px;">Tashkent, Uzbekistan</div>
+                <ul style="margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.7; color: var(--text-main);">
+                  <li>Built automation tooling, web scrapers, and high-load Telegram bot infrastructures.</li>
+                  <li>Configured Linux daemon services, Docker containers, and database optimizations.</li>
+                  <li>Performed security evaluations and code audits following OWASP Top 10 guidelines.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div>
+            <h3
+              style="font-size: 20px; font-weight: 600; color: #0a84ff; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">
+              Education & Honors</h3>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div>
+                  <div style="font-weight: 600; font-size: 18px;">Computer Science & Software Engineering</div>
+                  <div style="font-size: 16px; color: var(--text-main);">Advanced Informatics & Algorithmic Programming</div>
+                </div>
+                <div style="font-size: 15px; color: var(--text-muted); text-align: right;">Tashkent, Uzbekistan</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <div>
+                  <div style="font-weight: 600; font-size: 18px;">National Informatics Olympiad (Asosiy Fan Olimpiadasi)</div>
+                  <div style="font-size: 16px; color: var(--text-main);">Competitive Programming Finalist & District Participant</div>
+                </div>
+                <div style="font-size: 15px; color: var(--text-muted); text-align: right;">Uzbekistan</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Summary -->
+          <div>
+            <h3
+              style="font-size: 20px; font-weight: 600; color: #0a84ff; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">
+              Technical Skills</h3>
+            <div style="font-size: 15px; line-height: 1.8; color: var(--text-main);">
+              <strong>Languages & AI:</strong> Python, C++, C, PyTorch, TensorFlow, LLMs, Bash/Shell<br>
+              <strong>Backend & Data:</strong> FastAPI, Django, Node.js, PostgreSQL, MongoDB, Redis, Docker<br>
+              <strong>Frontend & Web:</strong> React, Next.js, TypeScript, JavaScript, Tailwind CSS, HTML5, CSS3<br>
+              <strong>DevOps & Tools:</strong> Linux (Ubuntu/Debian), Git, GitHub, Vercel, VS Code
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-content" id="contact-page">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 30px;">Contact Me</h2>
+
+        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+          <!-- Contact Info -->
+          <div style="flex: 1; min-width: 250px;">
+            <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: var(--text-main);">Get In Touch</h3>
+
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <!-- Email -->
+              <div
+                style="display: flex; align-items: center; gap: 16px; background: var(--glass-bg); padding: 16px; border-radius: 16px;">
+                <div style="background: var(--glass-bg-light); padding: 12px; border-radius: 12px; display: flex;"><svg
+                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg></div>
+                <div style="min-width: 0;">
+                  <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 2px;">Email</div>
+                  <a href="mailto:rgobzpe@gmail.com"
+                    style="font-size: 15px; font-weight: 500; color: #0a84ff; text-decoration: none; overflow-wrap: anywhere; word-break: break-word;">rgobzpe@gmail.com</a>
+                </div>
+              </div>
+
+              <!-- Telegram -->
+              <div
+                style="display: flex; align-items: center; gap: 16px; background: var(--glass-bg); padding: 16px; border-radius: 16px;">
+                <div style="background: var(--glass-bg-light); padding: 12px; border-radius: 12px; display: flex;"><svg
+                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg></div>
+                <div>
+                  <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 2px;">Telegram</div>
+                  <a href="https://t.me/TORABEK_ABDUVOITOV" target="_blank"
+                    style="font-size: 15px; font-weight: 500; color: #0a84ff; text-decoration: none;">@TORABEK_ABDUVOITOV</a>
+                </div>
+              </div>
+
+              <!-- GitHub -->
+              <div
+                style="display: flex; align-items: center; gap: 16px; background: var(--glass-bg); padding: 16px; border-radius: 16px;">
+                <div style="background: var(--glass-bg-light); padding: 12px; border-radius: 12px; display: flex;"><svg
+                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg></div>
+                <div>
+                  <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 2px;">GitHub</div>
+                  <a href="https://github.com/abduvoitov11" target="_blank"
+                    style="font-size: 15px; font-weight: 500; color: #0a84ff; text-decoration: none;">github.com/abduvoitov11</a>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div
+                style="display: flex; align-items: center; gap: 16px; background: var(--glass-bg); padding: 16px; border-radius: 16px;">
+                <div style="background: var(--glass-bg-light); padding: 12px; border-radius: 12px; display: flex;"><svg
+                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg></div>
+                <div>
+                  <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 2px;">Location</div>
+                  <div style="font-size: 15px; font-weight: 500;">Tashkent, Uzbekistan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Message -->
+          <div style="flex: 1.5; min-width: 300px;">
+            <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: var(--text-main);">Let's Connect</h3>
+            <div
+              style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px; padding: 30px; display: flex; flex-direction: column; gap: 20px;">
+              <p style="font-size: 16px; line-height: 1.8; color: var(--text-main); margin: 0;">
+                Whether you have an inquiry about AI solutions, full-stack web applications, business collaborations, or just want to say hi, feel free to drop me a message on Telegram or email!
+              </p>
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <a href="https://t.me/TORABEK_ABDUVOITOV" target="_blank"
+                  style="display: inline-flex; justify-content: center; align-items: center; gap: 10px; padding: 14px 24px; background: #0a84ff; color: #fff; font-weight: 600; font-size: 16px; border-radius: 12px; text-decoration: none; transition: opacity 0.2s;">
+                  Message on Telegram ↗
+                </a>
+                <a href="mailto:rgobzpe@gmail.com"
+                  style="display: inline-flex; justify-content: center; align-items: center; gap: 10px; padding: 14px 24px; background: var(--glass-bg-light); color: var(--text-main); font-weight: 600; font-size: 16px; border-radius: 12px; text-decoration: none; border: 1px solid var(--glass-border); transition: opacity 0.2s;">
+                  Send an Email ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-page-nav" id="mobilePageNav">
+        <button class="mp-nav-btn" data-page="home" onclick="showPage('home')">Home</button>
+        <button class="mp-nav-btn" data-page="about" onclick="showPage('about')">About</button>
+        <button class="mp-nav-btn" data-page="projects" onclick="showPage('projects')">Projects</button>
+        <button class="mp-nav-btn" data-page="experience" onclick="showPage('experience')">Experience</button>
+        <button class="mp-nav-btn" data-page="skills" onclick="showPage('skills')">Skills</button>
+        <button class="mp-nav-btn" data-page="resume" onclick="showPage('resume')">Resume</button>
+        <button class="mp-nav-btn" data-page="contact" onclick="showPage('contact')">Contact</button>
+      </div>
+
+      <!-- Wallpaper Picker -->
+      <div class="wp-picker" id="wpPicker">
+        <div class="wp-picker-title">Choose Wallpaper</div>
+        <div class="wp-grid" id="wpGrid"></div>
+        <div class="wp-divider"></div>
+        <div class="wp-upload-row">
+          <label class="wp-upload-btn" style="flex: 1;">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M8 2v9M4 6l4-4 4 4" />
+              <path d="M2 13h12" stroke-linecap="round" />
+            </svg>
+            Upload
+            <input type="file" accept="image/*" id="wpUpload">
+          </label>
+          <button id="themeToggleBtn" class="wp-upload-btn" style="flex: 1; background: rgba(255, 255, 255, 0.1);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            Theme
+          </button>
+          <button class="wp-close-btn" id="wpClose" style="flex: 1;">Done</button>
+        </div>
+      </div>
+
+      <div class="desktop-bottom-bar">
+        <!-- Links (Left of Dock) -->
+        <div class="links-left">
+          <a href="#" class="link-box" onclick="showPage('about'); return false;">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span class="link-text">About</span>
+          </a>
+          <a href="#" class="link-box" onclick="showPage('projects'); return false;">
+            <svg viewBox="0 0 24 24">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="link-text">Projects</span>
+          </a>
+          <a href="#" class="link-box" onclick="showPage('resume'); return false;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <span class="link-text">Resume</span>
+          </a>
+        </div>
+
+        <div class="dock-wrap">
+          <div class="dock" id="dock">
+
+            <div class="dock-icon" data-name="GitHub" onclick="window.open('https://github.com/abduvoitov11', '_blank')">
+              <img src="assets/icons/github.png"
+                style="width:100%; height:100%; object-fit:contain; transform:scale(1.15); filter:drop-shadow(0 8px 16px rgba(0,0,0,0.4));">
+              <span class="dock-tooltip">GitHub</span>
+            </div>
+
+            <div class="dock-icon hide-on-mobile" data-name="Gmail"
+              onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=rgobzpe@gmail.com', '_blank')">
+              <img src="assets/icons/gmail.png"
+                style="width:100%; height:100%; object-fit:contain; transform:scale(1.15); filter:drop-shadow(0 8px 16px rgba(0,0,0,0.4));">
+              <span class="dock-tooltip">Gmail</span>
+            </div>
+
+            <div class="dock-icon" data-name="LinkedIn"
+              onclick="window.open('https://www.linkedin.com/in/torabek', '_blank')">
+              <img src="assets/icons/linkedin.png"
+                style="width:100%; height:100%; object-fit:contain; transform:scale(1.15); filter:drop-shadow(0 8px 16px rgba(0,0,0,0.4));">
+              <span class="dock-tooltip">LinkedIn</span>
+            </div>
+
+            <div class="dock-icon" data-name="Instagram"
+              onclick="window.open('https://www.instagram.com/torabek_developer/', '_blank')">
+              <img src="assets/icons/instagram.png"
+                style="width:100%; height:100%; object-fit:contain; transform:scale(1.15); filter:drop-shadow(0 8px 16px rgba(0,0,0,0.4));">
+              <span class="dock-tooltip">Instagram</span>
+            </div>
+
+            <div class="dock-icon" data-name="Telegram"
+              onclick="window.open('https://t.me/TORABEK_ABDUVOITOV', '_blank')">
+              <img src="assets/icons/telegram.svg"
+                style="width:100%; height:100%; object-fit:contain; transform:scale(1.15); filter:drop-shadow(0 8px 16px rgba(0,0,0,0.4));">
+              <span class="dock-tooltip">Telegram</span>
+            </div>
+
+            <div class="dock-icon hide-on-mobile" data-name="Free Rider HD"
+              onclick="openApp('Free Rider HD', 'https://www.freeriderhd.com/')">
+              <img src="assets/images/freerider.jfif"
+                style="width:100%; height:100%; object-fit:cover; border-radius:14px; transform:scale(0.95); filter:drop-shadow(0 8px 16px rgba(0,0,0,0.4));">
+              <span class="dock-tooltip">Free Rider HD</span>
+            </div>
+
+            <div class="dock-icon" data-name="Apple Music" onclick="openApp('Apple Music', 'apple-music.html')">
+              <img src="assets/icons/vecteezy_apple-music-logo-square-rounded-apple-music-logo-apple_55138482.png"
+                style="width:100%; height:100%; object-fit:contain; transform:scale(1.15); filter:drop-shadow(0 8px 16px rgba(0,0,0,0.4));">
+              <span class="dock-tooltip">Apple Music</span>
+            </div>
+
+            <div class="dock-icon" id="wallpaperDockBtn" data-name="Wallpaper">
+              <div class="icon-tile"
+                 style="background:linear-gradient(160deg,#1a1a2e 0%,#16213e 40%,#0f3460 70%,#533483 100%);">
+                <svg viewBox="0 0 100 100" fill="none">
+                  <rect x="18" y="24" width="64" height="46" rx="5" fill="var(--text-muted)" stroke="var(--text-muted)"
+                    stroke-width="3" />
+                  <circle cx="34" cy="40" r="6" fill="#febc2e" />
+                  <path d="M18 56 L36 42 L52 54 L66 44 L82 56 L82 70 L18 70Z" fill="var(--text-muted)" />
+                  <path d="M52 54 L66 44 L82 56" stroke="var(--text-muted)" stroke-width="2" fill="none" />
+                </svg>
+              </div>
+              <span class="dock-tooltip">Wallpaper</span>
+              <span class="dock-dot"></span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Links (Right of Dock) -->
+        <div class="links-right">
+          <a href="#" class="link-box" onclick="showPage('experience'); return false;">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <span class="link-text">Experience</span>
+          </a>
+          <a href="#" class="link-box" onclick="showPage('skills'); return false;">
+            <svg viewBox="0 0 24 24">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span class="link-text">Skills</span>
+          </a>
+          <a href="#" class="link-box" onclick="showPage('contact'); return false;">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span class="link-text">Contact</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Windows will be dynamically injected here by the Window Manager -->
+
+    </div><!-- /.desktop -->
+  </div><!-- /.desktop-wrapper -->
+
+  <script>
+    // Mobile Chrome resizes the visible viewport as the address bar
+    // shows/hides, but 100vh stays pinned to the largest possible viewport.
+    // Track the real visible height in JS so the desktop/window-manager
+    // never renders taller than what's actually on screen.
+    (function () {
+      function setAppHeight() {
+        const vh = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
+        document.documentElement.style.setProperty('--app-height', vh + 'px');
+      }
+      setAppHeight();
+      window.addEventListener('resize', setAppHeight);
+      window.addEventListener('orientationchange', setAppHeight);
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', setAppHeight);
+        window.visualViewport.addEventListener('scroll', setAppHeight);
+      }
+    })();
+  </script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
